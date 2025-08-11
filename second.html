@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jean-Piaget</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+<body class="bg-blue-100">
+<header class="flex items-center justify-between px-4 py-4 border-b-4 border-gray-400 bg-white sticky top-0 z-50">
+  <!-- Logo -->
+  <div class="flex-shrink-0">
+    <img 
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzVuVqvFPXKhMJJkVm40dPH8da8SvGDJdSUg&s" 
+      alt="Logo"
+      class="rounded-full border-4 border-indigo-500 w-[80px] md:w-[100px] object-contain"
+    >
+  </div>
+
+  <!-- Navegación principal -->
+  <nav class="hidden md:flex items-center flex-grow justify-center mx-4">
+    <ul class="flex items-center space-x-4 lg:space-x-8 cursor-pointer">
+      <li class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
+        Acerca de nosotros
+      </li>
+      <li class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
+        Educación
+      </li>
+      <li class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
+        Galería
+      </li>
+      <li class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
+        Contáctenos
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Bloque derecho (idioma) -->
+  <div class="hidden md:flex flex-col items-center justify-center space-x-4 gap-1 lg:space-x-6">
+    <img 
+      src="https://previews.123rf.com/images/goodstudio/goodstudio1710/goodstudio171000250/88746237-colorful-planets-of-solar-system-arranged-in-horizontal-row-against-monochrome-background.jpg" 
+      class="w-[80px] h-[50px] lg:w-[100px] rounded-full border-2 border-blue-400 object-cover flex justify-self-center"
+      alt="Selector de idioma"
+    >
+    <ul class="border-2 border-blue-400 rounded-sm flex items-center hover:bg-blue-100 gap-2 cursor-pointer">
+      <li class="px-3 py-1">Idioma</li>
+      <li class="pr-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Menú Hamburguesa (mobile) -->
+  <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+    <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+
+  <!-- Menú Móvil (AÑADIDO - faltaba en tu código original) -->
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 px-6 border-t border-gray-200">
+    <ul class="flex flex-col space-y-4">
+      <li>
+        <a href="#" class="block font-bold text-lg hover:text-indigo-600 transition-colors py-2">Acerca de nosotros</a>
+      </li>
+      <li>
+        <a href="#" class="block font-bold text-lg hover:text-indigo-600 transition-colors py-2">Educación</a>
+      </li>
+      <li>
+        <a href="#" class="block font-bold text-lg hover:text-indigo-600 transition-colors py-2">Galería</a>
+      </li>
+      <li>
+        <a href="#" class="block font-bold text-lg hover:text-indigo-600 transition-colors py-2">Contáctenos</a>
+      </li>
+      <li class="pt-4 mt-4 border-t border-gray-200">
+        <div class="flex items-center justify-center space-x-4">
+          <img 
+            src="https://previews.123rf.com/images/goodstudio/goodstudio1710/goodstudio171000250/88746237-colorful-planets-of-solar-system-arranged-in-horizontal-row-against-monochrome-background.jpg" 
+            class="w-12 h-12 rounded-full border-2 border-blue-400 object-cover"
+            alt="Idioma"
+          >
+          <ul class="border-2 border-blue-400 rounded-sm flex items-center hover:bg-blue-100 gap-2 cursor-pointer">
+            <li class="px-3 py-1">Idioma</li>
+            <li class="pr-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  // Mueve el script al final del body para asegurar que el DOM esté cargado
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    if(menuBtn && mobileMenu && menuIcon) {
+      menuBtn.addEventListener('click', () => {
+        // Alternar visibilidad del menú
+        mobileMenu.classList.toggle('hidden');
+        
+        // Cambiar ícono entre hamburguesa y X
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        menuIcon.innerHTML = isOpen
+          ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>'
+          : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+      });
+
+      // Cerrar menú al hacer clic en un enlace
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>';
+        });
+      });
+    } else {
+      console.error('No se encontraron todos los elementos necesarios para el menú');
+    }
+  });
+</script>
+    
+</body>
+</html>

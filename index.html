@@ -7,59 +7,98 @@
     <title>Cargill</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="font-sans text-gray-800">
+  <body class="font-Merriweather text-gray-800">
     <!-- Hero Section (contenedor principal) -->
     <div class="relative min-h-screen bg-[url('https://images.unsplash.com/photo-1500382017468-9049fed747ef')] bg-cover bg-center bg-no-repeat bg-fixed">
       <!-- Overlay oscuro (ahora cubrirá todo el hero) -->
       <div class="absolute inset-0 bg-black/40 z-0"></div>
 
-      <!-- Header (encima del overlay) -->
-    <header class="bg-transparent-100 shadow-sm sticky top-0 z-50 rounded-b-lg">
-      <div class="container mx-auto px-6 py-4">
-        <div class="flex items-center justify-between">
-          <!-- Logo -->
-          <div class="w-32">
-            <a href="#"><img src="Images/cargilllogo.png" alt="Cargill Logo" class="w-full filter invert brightness-0 hover:filter hover:hue-rotate-90 hover:saturate-200 hover:brightness-100"></a>
-          </div>
-
-          <!-- Navegación principal -->
-          <nav class="hidden md:flex items-center space-x-8">
-            <a href="#" class="text-gray-100 hover:text-green-600 font-medium text-sm uppercase tracking-wide">About Cargill</a>
-            <a href="#" class="text-gray-100 hover:text-green-600 font-medium text-sm uppercase tracking-wide">Our Stories</a>
-            <a href="#" class="text-gray-100 hover:text-green-600 font-medium text-sm uppercase tracking-wide">Products & Services</a>
-            <a href="#" class="text-gray-100 hover:text-green-600 font-medium text-sm uppercase tracking-wide">Sustainability</a>
-            <a href="#" class="text-gray-100 hover:text-green-600 font-medium text-sm uppercase tracking-wide">News</a>
-            <a href="#" class="text-gray-100 hover:text-green-600 font-medium text-sm uppercase tracking-wide">Careers</a>
-            <a href="#" class="text-gray-100 hover:text-green-600 font-medium text-sm uppercase tracking-wide">Contact</a>
-          </nav>
-
-          <!-- Contenedor para tema y login -->
-          <div class="flex items-center space-x-6">
-            <!-- Switcher de tema mejorado -->
-            <div class="flex items-center border-2 rounded-full border-black overflow-hidden">
-              <a href="#" class="p-2 hover:bg-green-600 transition-colors duration-200">
-                <img src="Images/sun.png" class="w-5 h-5">
-              </a>
-              <div class="h-6 w-px bg-black"></div>
-              <a href="#" class="p-2 hover:bg-green-600 transition-colors duration-200">
-                <img src="Images/moon.png" class="w-5 h-5">
-              </a>
-            </div>
-
-            <!-- Login -->
-            <button class="flex items-center space-x-2 text-gray-100 hover:text-green-600">
-              <img src="Images/profile-user.png" alt="User profile" class="w-6 hover:invert brightness-0">
-              <span class="font-medium text-sm ">Sign in</span>
-            </button>
-          </div>
-        </div>
+<header class="sticky top-0 z-50 shadow-sm">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo (tamaño ajustable) -->
+      <div class="w-20 md:w-32">
+        <a href="#">
+          <img src="Images/cargilllogo.png" alt="Cargill Logo" 
+               class="w-full filter invert brightness-0 hover:filter hover:hue-rotate-90 hover:saturate-200 hover:brightness-100">
+        </a>
       </div>
-    </header>
+
+      <!-- Menú Desktop (oculto en móvil) -->
+      <nav class="hidden md:flex items-center space-x-4 lg:space-x-6">
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium text-xs md:text-sm uppercase tracking-wide transition-colors">About</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium text-xs md:text-sm uppercase tracking-wide">Stories</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium text-xs md:text-sm uppercase tracking-wide">Products</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium text-xs md:text-sm uppercase tracking-wide">Sustainability</a>
+        <a href="#" class="hidden lg:inline-block text-gray-800 hover:text-green-600 font-medium text-sm uppercase tracking-wide">News</a>
+        <a href="#" class="hidden lg:inline-block text-gray-800 hover:text-green-600 font-medium text-sm uppercase tracking-wide">Careers</a>
+      </nav>
+
+      <!-- Bloque derecho (Desktop) -->
+      <div class="hidden md:flex items-center space-x-4">
+        <div class="flex items-center justify-center border-2 rounded-full border-gray-800 overflow-hidden">
+          <button class="p-2 hover:bg-green-600 transition-colors">
+            <img src="Images/sun.png" class="w-4 h-4">
+          </button>
+          <div class="h-5 w-px bg-gray-800"></div>
+          <button class="p-2 hover:bg-green-600 transition-colors">
+            <img src="Images/moon.png" class="w-4 h-4">
+          </button>
+        </div>
+        <button class="flex items-center space-x-1 text-gray-800 hover:text-green-600">
+          <img src="Images/profile-user.png" class="w-5">
+          <span class="text-sm font-medium">Sign in</span>
+        </button>
+      </div>
+
+      <!-- Menú Hamburguesa (solo móvil) -->
+      <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">
+        <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú Móvil (oculto por defecto) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 border-t border-gray-200">
+      <div class="flex flex-col space-y-3 px-4">
+        <a href="second.html" class="text-gray-800 hover:text-green-600 font-medium py-2">About Cargill</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium py-2">Our Stories</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium py-2">Products & Services</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium py-2">Sustainability</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium py-2">News</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium py-2">Careers</a>
+        <a href="#" class="text-gray-800 hover:text-green-600 font-medium py-2">Contact</a>
+      </div>
+      <div class="mt-4 pt-4 border-t border-gray-200 px-4">
+        <button class="flex items-center space-x-2 text-gray-800 hover:text-green-600 w-full">
+          <img src="Images/profile-user.png" class="w-6">
+          <span class="font-medium">Sign in</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  menuBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.toggle('hidden');
+    
+    // Cambiar ícono entre hamburguesa y X
+    menuIcon.innerHTML = isHidden 
+      ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>'
+      : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>';
+  });
+</script>
 
       <!-- Contenido del Hero (encima del overlay) -->
       <section class="relative z-10">
-        <div class="container mx-auto px-6 flex items-center justify-center min-h-screen">
-          <div class="text-center max-w-3xl mx-auto p-6">
+        <div class="container mx-auto px-6 flex items-center justify-center min-h-80">
+          <div class="text-center max-w-3xl mx-auto p-6 my-15">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 transition-all duration-700 hover:scale-105">
               Nourishing the World
               <span class="block text-green-300 text-2xl md:text-5xl mt-3">Since 1865</span>
@@ -82,12 +121,12 @@
       <!-- Farmer (solo desktop) -->
       <img 
         src="Images/farmer.png" 
-        class="hidden md:block absolute bottom-0 left-[10%] w-[300px] lg:w-[400px] z-20 transition-all duration-700 hover:scale-105"
+        class="hidden md:block absolute bottom-0 left-[6%] w-[300px] lg:w-[250px] z-20 transition-all duration-700 hover:scale-105"
         alt="Farmer working with Cargill"
       >
       <img 
-        src="Images/family2.png" 
-        class="hidden md:block absolute bottom-57  right-[15%] w-[300px] lg:w-[600px] z-20 transition-all duration-700 hover:scale-105"
+        src="Images/World.png" 
+        class="hidden md:block absolute bottom-19 right-[4%] w-[300px] lg:w-[495px] z-20 transition-all duration-700 hover:scale-105"
         alt="Farmer working with Cargill"
       >
     </div>
