@@ -18,20 +18,31 @@
     >
   </div>
 
-  <!-- Navegación principal -->
+  <!-- Navegación principal con líneas verticales -->
   <nav class="hidden md:flex items-center flex-grow justify-center mx-4">
-    <ul class="flex items-center space-x-4 lg:space-x-8 cursor-pointer">
-      <li class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
-        Acerca de nosotros
+    <ul class="flex items-center divide-x divide-gray-300 space-x-0">
+      <li class="px-2">
+        <a href="#" class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
+          Acerca de nosotros
+        </a>
       </li>
-      <li class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
-        Educación
+      <li class="px-2">
+        <div class="flex items-center gap-1 whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
+          Educación
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
       </li>
-      <li class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
-        Galería
+      <li class="px-2">
+        <a href="#" class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
+          Galería
+        </a>
       </li>
-      <li class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
-        Contáctenos
+      <li class="px-2">
+        <a href="#" class="whitespace-nowrap font-bold text-lg lg:text-xl xl:text-2xl hover:text-indigo-600 transition-colors">
+          Contáctenos
+        </a>
       </li>
     </ul>
   </nav>
@@ -60,16 +71,16 @@
     </svg>
   </button>
 
-  <!-- Menú Móvil (AÑADIDO - faltaba en tu código original) -->
+  <!-- Menú Móvil -->
   <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4 px-6 border-t border-gray-200">
     <ul class="flex flex-col space-y-4">
-      <li>
+      <li class="border-b border-gray-200 pb-2">
         <a href="#" class="block font-bold text-lg hover:text-indigo-600 transition-colors py-2">Acerca de nosotros</a>
       </li>
-      <li>
-        <a href="#" class="block font-bold text-lg hover:text-indigo-600 transition-colors py-2">Educación</a>
+      <li class="border-b border-gray-200 pb-2">
+        <a href="#" class="block font-bold text-lg hover:text-indigo-600 transition-colors py-2">Educación</a> 
       </li>
-      <li>
+      <li class="border-b border-gray-200 pb-2">
         <a href="#" class="block font-bold text-lg hover:text-indigo-600 transition-colors py-2">Galería</a>
       </li>
       <li>
@@ -82,8 +93,8 @@
             class="w-12 h-12 rounded-full border-2 border-blue-400 object-cover"
             alt="Idioma"
           >
-          <ul class="border-2 border-blue-400 rounded-sm flex items-center hover:bg-blue-100 gap-2 cursor-pointer">
-            <li class="px-3 py-1">Idioma</li>
+          <ul class="ml-0 mx-0 border-2 border-blue-400 rounded-sm flex items-center hover:bg-blue-100 gap-2 cursor-pointer ">
+            <li class="px-2 py-1 ml-0">Idioma</li>
             <li class="pr-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
